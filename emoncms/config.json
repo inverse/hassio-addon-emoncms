@@ -12,6 +12,7 @@
   "boot": "auto",
   "hassio_api": true,
   "hassio_role": "default",
+  "services": ["mysql:want"],
   "map": ["ssl"],
   "ports": {
     "9541/tcp": 9541
@@ -22,11 +23,7 @@
   "options": {
     "ssl": true,
     "certfile": "fullchain.pem",
-    "keyfile": "privkey.pem",
-    "sql": { 
-      "name": "emoncms",
-      "port": 3306
-    }
+    "keyfile": "privkey.pem"
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
@@ -34,11 +31,11 @@
     "certfile": "str",
     "keyfile": "str",
     "sql": { 
-      "server": "str",
-      "name": "str",
-      "username": "str",
-      "password": "str",
-      "port": "int"
+      "server": "str?",
+      "name": "str?",
+      "username": "str?",
+      "password": "str?",
+      "port": "int?"
     }
   }
 }
