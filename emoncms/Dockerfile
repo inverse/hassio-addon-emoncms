@@ -51,7 +51,7 @@ LABEL \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="Franck Nijhof <frenck@addons.community>" \
+    maintainer="Malachi Soord" \
     org.opencontainers.image.title="TasmoAdmin" \
     org.opencontainers.image.description="Emoncms is a powerful open-source web-app for processing, logging and visualising energy, temperature and other environmental data." \
     org.opencontainers.image.vendor="Home Assistant Community Add-ons" \
