@@ -13,8 +13,8 @@
 	"settings": { 
 		"terminal.integrated.shell.linux": "/bin/bash"
 	},
-	"workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/test_hassio/addons/local/myaddon,type=bind,consistency=delegated",
-	"workspaceFolder": "/workspaces/test_hassio/addons/local/myaddon",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/test_hassio/addons/local/emoncms,type=bind,consistency=delegated",
+	"workspaceFolder": "/workspaces/test_hassio/addons/local/emoncms",
 	"mounts": [
 		// Cache docker images between devcontainer rebuilds (and share between devcontainers)
 		"source=vsc-hassio-docker,target=/var/lib/docker,type=volume"
