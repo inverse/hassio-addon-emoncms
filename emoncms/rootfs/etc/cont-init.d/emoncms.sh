@@ -10,13 +10,33 @@ declare sql_username
 declare sql_pasword
 declare sql_port
 
-if bashio::config.has_value 'remote_mysql_host'; then
+if bashio::config.has_value "sql.server"; then
+    if ! bashio::config.has_value "sql.name"; then
+    bashio::exit.nok \
+        "Remote database has been specified but no database is configured"
+    fi
+
+    if ! bashio::config.has_value "sql.username"; then
+    bashio::exit.nok \
+        "Remote database has been specified but no username is configured"
+    fi
+
+    if ! bashio::config.has_value "sql.password"; then
+    bashio::log.fatal \
+        "Remote database has been specified but no password is configured"
+    fi
+
+    if ! bashio::config.exists "sql.port"; then
+    bashio::exit.nok \
+        "Remote database has been specified but no port is configured"
+    fi
+
+
     sql_server=$(bashio::config "sql.server")
     sql_name=$(bashio::config "sql.name")
     sql_username=$(bashio::config "sql.username")
     sql_pasword=$(bashio::config "sql.password")
     sql_port=$(bashio::config "sql.port")
-    # TODO: Validation
 else
     if ! bashio::services.available 'mysql'; then
         bashio::log.fatal \
@@ -30,6 +50,11 @@ else
     sql_port=$(bashio::services "mysql" "port")
     sql_username=$(bashio::services "mysql" "username")
     sql_name=emoncms
+
+    bashio::log.warning "Bookstack is using the Maria DB addon"
+    bashio::log.warning "Please ensure this is included in your backups"
+    bashio::log.warning "Uninstalling the MariaDB addon will remove any data"
+
 
     bashio::log.info "Creating database for Emoncms if required"
 
