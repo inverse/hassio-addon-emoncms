@@ -16,7 +16,6 @@ You can install this addon like how you would any 3rd party addmon
 
 3. Once added, scroll down the page to find the new repository section, click on the addon titled "Emoncms".
 
-
 ## License
 
 MIT License

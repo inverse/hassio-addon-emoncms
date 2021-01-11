@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Home Assistant Community Add-on: TasmoAdmin
-# Configures NGINX for use with TasmoAdmin
+# Home Assistant Community Add-on: Emoncms
+# Configures NGINX for use with Emoncms
 # ==============================================================================
 declare certfile
 declare keyfile

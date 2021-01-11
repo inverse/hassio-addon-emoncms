@@ -15,10 +15,10 @@
   "services": ["mysql:want"],
   "map": ["ssl"],
   "ports": {
-    "9541/tcp": 9541
+    "80/tcp": 9541
   },
   "ports_description": {
-    "9541/tcp": "Emoncms web interface"
+    "80/tcp": "Emoncms web interface"
   },
   "options": {
     "ssl": true,
@@ -30,12 +30,10 @@
     "ssl": "bool",
     "certfile": "str",
     "keyfile": "str",
-    "sql": { 
-      "server": "str?",
-      "name": "str?",
-      "username": "str?",
-      "password": "str?",
-      "port": "int?"
-    }
+    "remote_mysql_host": "str?",
+    "remote_mysql_database": "str?",
+    "remote_mysql_username": "str?",
+    "remote_mysql_password": "str?",
+    "remote_mysql_port": "int?"
   }
 }

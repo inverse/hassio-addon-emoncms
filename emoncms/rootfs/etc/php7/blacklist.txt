@@ -1,2 +1,2 @@
-/data/tasmoadmin/*
-/var/www/tasmoadmin/tasmoadmin/data/*
+/data/emoncms/*
+
