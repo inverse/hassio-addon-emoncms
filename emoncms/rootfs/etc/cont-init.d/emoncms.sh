@@ -64,12 +64,11 @@ cd /var/www/emoncms
 bashio::log.info "Configuring settings.php"
 
 cp example.settings.php settings.php
-
-sed -i "s/\"server\"   => \"localhost\"/\"server\"   => \$_ENV['MYSQL_HOST']/g" settings.php
-sed -i "s/\"database\" => \"emoncms\"/\"database\" => \$_ENV['MYSQL_NAME']/g" settings.php
-sed -i "s/\"_DB_USER_\"/\$_ENV['MYSQL_USERNAME']/g" settings.php
-sed -i "s/\"_DB_PASSWORD_\"/\$_ENV['MYSQL_PASSWORD']/g" settings.php
-sed -i "s/\"port\"     => 3306/\"port\"     => \$_ENV['MYSQL_PORT']/g" settings.php
+sed -i "s/\"server\"   => \"localhost\"/\"server\"   => getenv('MYSQL_HOST')/g" settings.php
+sed -i "s/\"database\" => \"emoncms\"/\"database\" => getenv('MYSQL_NAME')/g" settings.php
+sed -i "s/\"_DB_USER_\"/getenv('MYSQL_USERNAME')/g" settings.php
+sed -i "s/\"_DB_PASSWORD_\"/getenv('MYSQL_PASSWORD')/g" settings.php
+sed -i "s/\"port\"     => 3306/\"port\"     => getenv('MYSQL_PORT')/g" settings.php
 
 # Configure logging
 
