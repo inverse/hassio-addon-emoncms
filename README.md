@@ -2,7 +2,7 @@
 
 ## About
 
-[Emoncms][0] is a powerful open-source web-app for processing, logging and visualising energy, temperature and other environmental data.
+[Emoncms][emoncms] is a powerful open-source web-app for processing, logging and visualising energy, temperature and other environmental data.
 
 Disclaimer: This addon is very much WIP and not ready for stable use.
 
@@ -12,4 +12,5 @@ Disclaimer: This addon is very much WIP and not ready for stable use.
 
 MIT License
 
-[0]: https://emoncms.org/
+[emoncms]: https://emoncms.org/
+[docs]: emoncms/DOCS.md
