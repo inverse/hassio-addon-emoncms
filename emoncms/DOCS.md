@@ -91,9 +91,7 @@ that there is no easy upgrade path between the two options.
 
 ## Known issues and limitations
 
-- SMTP support is disabled.
-- Ingress will not function due to the way the application stores image files.
-
+Please report any issues.
 
 ## License
 
