@@ -22,7 +22,7 @@ Example add-on configuration:
 
 ```yaml
 log_level: info
-ssl: falseMYSQL
+ssl: false
 certfile: fullchain.pem
 keyfile: privkey.pem
 ```
