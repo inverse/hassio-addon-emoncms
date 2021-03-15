@@ -37,5 +37,6 @@
     "remote_mysql_username": "str?",
     "remote_mysql_password": "str?",
     "remote_mysql_port": "int?"
-  }
+  },
+  "image": "inverse/image-{arch}-emoncms"
 }
