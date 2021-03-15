@@ -1,4 +1,4 @@
-// For format details, see https://aka.ms/vscode-remote/devcontainer.json 
+// For format details, see https://aka.ms/vscode-remote/devcontainer.json
 // TODO: When https://github.com/microsoft/vscode-remote-release/issues/2129 is fixed, move to ${localWorkspaceFolderBasename}\
 {
 	"name": "Home Assistant Add-On",
@@ -10,7 +10,7 @@
 		"GIT_EDITOR=code --wait",
 		"--privileged"
 	],
-	"settings": { 
+	"settings": {
 		"terminal.integrated.shell.linux": "/bin/bash"
 	},
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/test_hassio/addons/local/emoncms,type=bind,consistency=delegated",

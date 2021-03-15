@@ -99,5 +99,5 @@ case "$1" in
         install
         cleanup_docker || true
         run_supervisor
-        stop_docker;; 
+        stop_docker;;
 esac
