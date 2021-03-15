@@ -7,6 +7,16 @@ on:
     branches: ["master"]
 
 jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v2
+    - name: Install pre-commit
+      run: pip install pre-commit
+    - name: Lint
+        run: pre-commit run --all-files
   build:
     name: Test build
     runs-on: ubuntu-latest
