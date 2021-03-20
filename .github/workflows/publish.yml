@@ -21,6 +21,5 @@ jobs:
       with:
         args: |
           --all \
-          --version ${{ github.event.release.tag_name }} \
           --target emoncms \
           --docker-hub inversechi
