@@ -6,13 +6,13 @@ This addon packages the installation allowing you to run it easily along side yo
 
 ## Installation
 
-You can install this addon like how you would any 3rd party addmon
+You can install this addon like how you would any 3rd party addon.
 
-1. Navigate within your Home Assistant frontend to __Supervisor__ then __Add-on Store__.
+1. Navigate within your Home Assistant frontend to __Supervisor__ then __Add-on Store__
 
-2. Click the 3-dots menu at upper right, then __Repositories__ and add this repository URL: https://github.com/inverse/hassio-addon-emoncms.
+2. Click the 3-dots menu at upper right, then __Repositories__ and add this repository URL: https://github.com/inverse/hassio-addon-emoncms
 
-3. Once added, scroll down the page to find the new repository section, click on the addon titled "Emoncms".
+3. Once added, scroll down the page to find the new repository section, click on the addon titled "Emoncms"
 
 ## Configuration
 
@@ -49,10 +49,8 @@ you are troubleshooting.
 
 ### Option: `ssl`
 
-Enables/Disables SSL (HTTPS) on the web interface of TasmoAdmin
+Enables/Disables SSL (HTTPS) on the web interface of Emoncms
 Panel. Set it `true` to enable it, `false` otherwise.
-
-__Note__ Tasmota does not support OTA via SSL
 
 ### Option: `certfile`
 
@@ -69,7 +67,6 @@ __Note__: _The file MUST be stored in `/ssl/`, which is the default_
 ### Option: `remote_mysql_host`
 
 If using an external database, the hostname/address for the MySQL/MariaDB database.
-MYSQL`
 
 Only applies if a remote MySQL database is used, the username with permissions.
 
