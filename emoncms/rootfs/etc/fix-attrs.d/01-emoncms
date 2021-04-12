@@ -1,3 +1,3 @@
 /var/www/emoncms true nginx 0644 0755
-/data/phpfina true nginx 0644 0755
-/data/phptimeseries true nginx 0644 0755
+/data/emoncms/phpfina true nginx 0644 0755
+/data/emoncms/phptimeseries true nginx 0644 0755
