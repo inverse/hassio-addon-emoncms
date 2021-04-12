@@ -89,8 +89,9 @@ bashio::log.info "Setting up persistant storage"
 if ! bashio::fs.directory_exists "/data/emoncms"; then
     bashio::log.debug 'Data directory not initialized, doing that now...'
 
-    # Create directory
-    mkdir /data/emoncms
+    # Create directories 
+    mkdir -p /data/emoncms/phpfina
+    mkdir -p /data/emoncms/phptimeseries
 
     # Ensure file permissions
     chown -R nginx:nginx /data/emoncms
