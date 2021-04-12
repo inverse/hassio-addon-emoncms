@@ -70,6 +70,10 @@ sed -i "s/\"_DB_USER_\"/getenv('MYSQL_USERNAME')/g" settings.php
 sed -i "s/\"_DB_PASSWORD_\"/getenv('MYSQL_PASSWORD')/g" settings.php
 sed -i "s/\"port\"     => 3306/\"port\"     => getenv('MYSQL_PORT')/g" settings.php
 
+
+sed -i "s/\/var\/opt\/emoncms\/phpfina\//\/data\/emoncms\/phpfina\//g" settings.php
+sed -i "s/\/var\/opt\/emoncms\/phptimeseries\//\/data\/emoncms\/phptimeseries\//g" settings.php
+
 # Configure logging
 
 bashio::log.info "Setting up logging"
@@ -77,4 +81,19 @@ bashio::log.info "Setting up logging"
 mkdir -p /var/log/emoncms
 ln -sf /dev/stderr /var/log/emoncms/emoncms.log
 
-# TODO: Configure persistant storage
+# Configure persistant storage
+
+bashio::log.info "Setting up persistant storage"
+
+# Ensure persistant storage exists
+if ! bashio::fs.directory_exists "/data/emoncms"; then
+    bashio::log.debug 'Data directory not initialized, doing that now...'
+
+    # Create directory
+    mkdir /data/emoncms
+
+    # Ensure file permissions
+    chown -R nginx:nginx /data/emoncms
+    find /data/emoncms -not -perm 0644 -type f -exec chmod 0644 {} \;
+    find /data/emoncms -not -perm 0755 -type d -exec chmod 0755 {} \;
+fi

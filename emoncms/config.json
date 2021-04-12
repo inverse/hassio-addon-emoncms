@@ -1,6 +1,6 @@
 {
   "name": "Emoncms",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "slug": "emoncms",
   "description": "Emoncms is a powerful open-source web-app for processing, logging and visualising energy, temperature and other environmental data.",
   "url": "https://github.com/inverse/hassio-addon-emoncms",
@@ -37,6 +37,5 @@
     "remote_mysql_username": "str?",
     "remote_mysql_password": "str?",
     "remote_mysql_port": "int?"
-  },
-  "image": "inversechi/hassio-emoncms-{arch}"
+  }
 }
