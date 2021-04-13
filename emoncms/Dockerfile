@@ -15,6 +15,7 @@ RUN \
         php7-fpm=7.4.15-r0 \
         php7-gettext=7.4.15-r0 \
         php7-json=7.4.15-r0 \
+        php7-mbstring=7.4.15-r0 \
         php7-mysqli=7.4.15-r0 \
         php7-opcache=7.4.15-r00 \
         php7-session=7.4.15-r0 \
@@ -26,10 +27,22 @@ RUN \
     \
     && git clone --branch 10.2.7 --depth=1 \
         https://github.com/emoncms/emoncms.git /var/www/emoncms \
+    && git clone --branch 2.0.8 --depth=1 \
+        https://github.com/emoncms/dashboard.git /var/www/emoncms/Modules/dashboard \
+    && git clone --branch 2.0.10 --depth=1 \
+        https://github.com/emoncms/graph.git /var/www/emoncms/Modules/graph \
+    && git clone --branch 2.1.6 --depth=1 \
+        https://github.com/emoncms/app.git /var/www/emoncms/Modules/app \
+    && git clone --branch 2.0.6 --depth=1 \
+        https://github.com/emoncms/device.git /var/www/emoncms/Modules/device \
     \
     && apk del --no-cache --purge .build-dependencies \
     \
     && rm -f -r /var/www/emoncms/.git \
+    && rm -f -r /var/www/emoncms/Modules/dashboard/.git \
+    && rm -f -r /var/www/emoncms/Modules/graph/.git \
+    && rm -f -r /var/www/emoncms/Modules/app/.git \
+    && rm -f -r /var/www/emoncms/Modules/device/.git \
     && find /var/www/emoncms -type f -name ".htaccess" -depth -exec rm -f {} \; \
     && find /var/www/emoncms -type f -name "*.md" -depth -exec rm -f {} \; \
     && find /var/www/emoncms -type f -name ".gitignore" -depth -exec rm -f {} \; \
