@@ -90,8 +90,12 @@ that there is no easy upgrade path between the two options.
 
 Please report any issues.
 
+- [EmonESP][1] does not currently support parsing the port from the "Emoncms Server" input field, making it complex to map this addon on a non-standard HTTP port. See [issue][2]
+
 ## License
 
 MIT License
 
 [0]: https://emoncms.org/
+[1]: https://github.com/openenergymonitor/EmonESP
+[2]: https://github.com/inverse/hassio-addon-emoncms/issues/13
