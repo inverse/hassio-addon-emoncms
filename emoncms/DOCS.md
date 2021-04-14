@@ -90,7 +90,7 @@ that there is no easy upgrade path between the two options.
 
 Please report any issues.
 
-- [EmonESP][1] does not support support parsing the port from the "Emoncms Server" input field. See [issue][2]
+- [EmonESP][1] does not currently support parsing the port from the "Emoncms Server" input field, making it complex to map this addon on a non-standard HTTP port. See [issue][2]
 
 ## License
 
