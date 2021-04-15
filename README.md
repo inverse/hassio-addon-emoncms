@@ -8,9 +8,9 @@ Disclaimer: This addon is WIP and not ready for stable use. If you do choose to 
 
 [Full Documentation][docs]
 
-## Developing
+## Contributing
 
-See the [Contributing](CONTRIBUTION.md) guide for more information.
+See the [contributing](CONTRIBUTION.md) documentation for more information.
 
 ## License
 
