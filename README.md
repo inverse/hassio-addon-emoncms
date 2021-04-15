@@ -8,6 +8,10 @@ Disclaimer: This addon is WIP and not ready for stable use. If you do choose to 
 
 [Full Documentation][docs]
 
+## Developing
+
+See the [Contributing](CONTRIBUTION.md) guide for more information.
+
 ## License
 
 MIT License
