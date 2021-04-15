@@ -16,7 +16,7 @@ First open this project within the container. It make take some time to pull the
 
 Next, Open the task view and run "Start Home Assistant". This make take some time but after a few minutes you should be able to get a working instance of Home Assistant up on `http://localhost:8123`.
 
-From here you'll be able to set things up like you would normally and install the MariaDB addon to provide the database for this extension. 
+From here you'll be able to set things up like you would normally and install the MariaDB addon to provide the database for this extension.
 
 
 [0]: https://code.visualstudio.com/
