@@ -15,7 +15,7 @@ if bashio::config.has_value "remote_mysql_host"; then
     bashio::exit.nok \
         "Remote database has been specified but no database is configured"
     fi
-sql_poremote_mysql_portremote_mysql_portrt
+
     if ! bashio::config.has_value 'remote_mysql_username'; then
     bashio::exit.nok \
         "Remote database has been specified but no username is configured"
