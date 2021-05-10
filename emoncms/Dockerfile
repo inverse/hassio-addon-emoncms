@@ -9,7 +9,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN \
     apk add --no-cache \
         nginx=1.18.0-r13 \
-        mariadb-client=10.5.8-r0 \
+        mariadb-client=10.5.9-r0 \
         php7-ctype=7.4.15-r0 \
         php7-curl=7.4.15-r0 \
         php7-fpm=7.4.15-r0 \
