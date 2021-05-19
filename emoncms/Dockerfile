@@ -25,8 +25,9 @@ RUN \
     && apk add --no-cache --virtual .build-dependencies \
         git=2.30.2-r0 \
     \
-    && git clone --branch fix-cli --depth=1 \
-        https://github.com/inverse/emoncms.git /var/www/emoncms \
+    && git clone --branch master --depth=1 \
+        https://github.com/emoncms/emoncms.git /var/www/emoncms \
+        
     && git clone --branch 2.0.8 --depth=1 \
         https://github.com/emoncms/dashboard.git /var/www/emoncms/Modules/dashboard \
     && git clone --branch 2.0.10 --depth=1 \
