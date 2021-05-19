@@ -27,7 +27,6 @@ RUN \
     \
     && git clone --branch master --depth=1 \
         https://github.com/emoncms/emoncms.git /var/www/emoncms \
-
     && git clone --branch 2.0.8 --depth=1 \
         https://github.com/emoncms/dashboard.git /var/www/emoncms/Modules/dashboard \
     && git clone --branch 2.0.10 --depth=1 \
