@@ -25,8 +25,8 @@ RUN \
     && apk add --no-cache --virtual .build-dependencies \
         git=2.30.2-r0 \
     \
-    && git clone --branch master --depth=1 \
-        https://github.com/emoncms/emoncms.git /var/www/emoncms \
+    && git clone --branch master \
+        https://github.com/emoncms/emoncms.git /var/www/emoncms ; cd /var/www/emoncms ; git checkout 94a3f222cda2dcdf8a4b3ca6275108eca4549aec \
     && git clone --branch 2.0.8 --depth=1 \
         https://github.com/emoncms/dashboard.git /var/www/emoncms/Modules/dashboard \
     && git clone --branch 2.0.10 --depth=1 \
