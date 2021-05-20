@@ -98,3 +98,29 @@ if ! bashio::fs.directory_exists "/data/emoncms"; then
     find /data/emoncms -not -perm 0644 -type f -exec chmod 0644 {} \;
     find /data/emoncms -not -perm 0755 -type d -exec chmod 0755 {} \;
 fi
+
+# Run migrations
+
+bashio::log.info "Running migrations if needed"
+
+export MYSQL_HOST
+export MYSQL_NAME
+export MYSQL_USERNAME
+export MYSQL_PASSWORD
+export MYSQL_PORT
+
+if bashio::config.has_value 'remote_mysql_host';then
+    MYSQL_HOST=$(bashio::config "remote_mysql_host")
+    MYSQL_NAME=$(bashio::config "remote_mysql_database")
+    MYSQL_USERNAME=$(bashio::config "remote_mysql_username")
+    MYSQL_PASSWORD=$(bashio::config "remote_mysql_password")
+    MYSQL_PORT=$(bashio::config "remote_mysql_port")
+else
+    MYSQL_HOST=$(bashio::services "mysql" "host")
+    MYSQL_NAME=emoncms
+    MYSQL_USERNAME=$(bashio::services "mysql" "username")
+    MYSQL_PASSWORD=$(bashio::services "mysql" "password")
+    MYSQL_PORT=$(bashio::services "mysql" "port")
+fi
+
+php scripts/emoncms-cli admin:dbupdate
