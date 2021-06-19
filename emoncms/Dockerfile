@@ -8,8 +8,8 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base
 RUN \
     apk add --no-cache \
-        nginx=1.18.0-r13 \
-        mariadb-client=10.5.9-r0 \
+        nginx=1.18.0-r15 \
+        mariadb-client=10.5.10-r0 \
         php7-ctype=7.4.19-r0 \
         php7-curl=7.4.19-r0 \
         php7-fpm=7.4.19-r0 \
@@ -25,13 +25,13 @@ RUN \
     && apk add --no-cache --virtual .build-dependencies \
         git=2.30.2-r0 \
     \
-    && git clone --branch master \
-        https://github.com/emoncms/emoncms.git /var/www/emoncms ; cd /var/www/emoncms ; git checkout 94a3f222cda2dcdf8a4b3ca6275108eca4549aec \
+    && git clone --branch 10.5.5 --depth=1 \
+        https://github.com/emoncms/emoncms.git /var/www/emoncms \
     && git clone --branch 2.0.8 --depth=1 \
         https://github.com/emoncms/dashboard.git /var/www/emoncms/Modules/dashboard \
-    && git clone --branch 2.0.10 --depth=1 \
+    && git clone --branch 2.0.11 --depth=1 \
         https://github.com/emoncms/graph.git /var/www/emoncms/Modules/graph \
-    && git clone --branch 2.1.6 --depth=1 \
+    && git clone --branch 2.2.7 --depth=1 \
         https://github.com/emoncms/app.git /var/www/emoncms/Modules/app \
     && git clone --branch 2.0.6 --depth=1 \
         https://github.com/emoncms/device.git /var/www/emoncms/Modules/device \
