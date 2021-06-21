@@ -79,7 +79,8 @@ sed -i "s/\/var\/opt\/emoncms\/phptimeseries\//\/data\/emoncms\/phptimeseries\//
 bashio::log.info "Setting up logging"
 
 mkdir -p /var/log/emoncms
-ln -sf /dev/stderr /var/log/emoncms/emoncms.log
+touch /var/log/emoncms/emoncms.log
+chmod 666 /var/log/emoncms/emoncms.log
 
 # Configure persistant storage
 
