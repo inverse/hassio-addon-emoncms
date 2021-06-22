@@ -25,15 +25,15 @@ RUN \
     && apk add --no-cache --virtual .build-dependencies \
         git=2.30.2-r0 \
     \
-    && git clone --branch 10.5.5 --depth=1 \
-        https://github.com/emoncms/emoncms.git /var/www/emoncms \
-    && git clone --branch 2.0.8 --depth=1 \
+    && git clone --branch master \
+        https://github.com/emoncms/emoncms.git /var/www/emoncms ; cd /var/www/emoncms ; git checkout 94a3f222cda2dcdf8a4b3ca6275108eca4549aec \
+    && git clone --branch 2.0.10 --depth=1 \
         https://github.com/emoncms/dashboard.git /var/www/emoncms/Modules/dashboard \
     && git clone --branch 2.0.11 --depth=1 \
         https://github.com/emoncms/graph.git /var/www/emoncms/Modules/graph \
     && git clone --branch 2.2.7 --depth=1 \
         https://github.com/emoncms/app.git /var/www/emoncms/Modules/app \
-    && git clone --branch 2.0.6 --depth=1 \
+    && git clone --branch 2.0.9 --depth=1 \
         https://github.com/emoncms/device.git /var/www/emoncms/Modules/device \
     \
     && apk del --no-cache --purge .build-dependencies \
