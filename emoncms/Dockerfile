@@ -9,7 +9,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN \
     apk add --no-cache \
         nginx=1.18.0-r15 \
-        mariadb-client=10.5.10-r0 \
+        mariadb-client=10.5.11-r0 \
         php7-ctype=7.4.19-r0 \
         php7-curl=7.4.19-r0 \
         php7-fpm=7.4.19-r0 \
@@ -18,9 +18,11 @@ RUN \
         php7-mbstring=7.4.19-r0 \
         php7-mysqli=7.4.19-r0 \
         php7-opcache=7.4.19-r00 \
+        php7-pecl-redis=5.3.4-r0 \
         php7-session=7.4.19-r0 \
         php7-zip=7.4.19-r0 \
         php7=7.4.19-r0 \
+        redis=6.0.14-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
         git=2.30.2-r0 \

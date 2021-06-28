@@ -74,6 +74,10 @@ sed -i "s/\"port\"     => 3306/\"port\"     => getenv('MYSQL_PORT')/g" settings.
 sed -i "s/\/var\/opt\/emoncms\/phpfina\//\/data\/emoncms\/phpfina\//g" settings.php
 sed -i "s/\/var\/opt\/emoncms\/phptimeseries\//\/data\/emoncms\/phptimeseries\//g" settings.php
 
+# Enable Redis, not the best solution
+sed -i "s/    'enabled' => false/    'enabled' => true/g" default-settings.php
+
+
 # Configure logging
 
 bashio::log.info "Setting up logging"
