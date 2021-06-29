@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Home Assistant Community Add-on: Emoncms
+# Runs the Redis daemon
+# ==============================================================================
+bashio::log.info "Starting Redis server..."
+exec redis-server /etc/redis/redis.conf;
