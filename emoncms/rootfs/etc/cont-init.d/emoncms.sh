@@ -64,24 +64,23 @@ cd /var/www/emoncms
 bashio::log.info "Configuring settings.php"
 
 cp example.settings.php settings.php
+
+# Setup Database params
 sed -i "s/\"server\"   => \"localhost\"/\"server\"   => getenv('MYSQL_HOST')/g" settings.php
 sed -i "s/\"database\" => \"emoncms\"/\"database\" => getenv('MYSQL_NAME')/g" settings.php
 sed -i "s/\"_DB_USER_\"/getenv('MYSQL_USERNAME')/g" settings.php
 sed -i "s/\"_DB_PASSWORD_\"/getenv('MYSQL_PASSWORD')/g" settings.php
 sed -i "s/\"port\"     => 3306/\"port\"     => getenv('MYSQL_PORT')/g" settings.php
 
-
+# Setup data directories
 sed -i "s/\/var\/opt\/emoncms\/phpfina\//\/data\/emoncms\/phpfina\//g" settings.php
 sed -i "s/\/var\/opt\/emoncms\/phptimeseries\//\/data\/emoncms\/phptimeseries\//g" settings.php
 
-# Enable Redis, not the best solution
-sed -i "s/    'enabled' => false/    'enabled' => true/g" default-settings.php
-
+# Enable Redis
+sed -i '/"redis"=>array($/{N;s/\('"'"'enabled'"'"' => \)false/\1true/}' settings.php
 
 # Configure logging
-
 bashio::log.info "Setting up logging"
-
 mkdir -p /var/log/emoncms
 touch /var/log/emoncms/emoncms.log
 chmod 666 /var/log/emoncms/emoncms.log
