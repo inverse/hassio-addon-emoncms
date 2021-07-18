@@ -29,6 +29,9 @@ jobs:
         path: "./emoncms"
   build:
     name: Test build
+    needs:
+      - lint-general
+      - lint-addon
     runs-on: ubuntu-latest
     steps:
     - name: Checkout the repository
