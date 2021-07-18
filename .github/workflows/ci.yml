@@ -7,7 +7,7 @@ on:
     branches: ["master"]
 
 jobs:
-  lint:
+  lint-general:
     name: Lint
     runs-on: ubuntu-latest
     steps:
@@ -17,8 +17,21 @@ jobs:
       run: pip install pre-commit
     - name: Lint
       run: pre-commit run --all-files
+  lint-addon:
+    name: Add-on configuration
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v2
+    - name: 🚀 Run Home Assistant Add-on Lint
+      uses: frenck/action-addon-linter@v1
+      with:
+        path: "./emoncms"
   build:
     name: Test build
+    needs:
+      - lint-general
+      - lint-addon
     runs-on: ubuntu-latest
     steps:
     - name: Checkout the repository
