@@ -27,7 +27,7 @@ RUN \
         git=2.32.0-r0 \
         php7-pear=7.4.21-r0 \
         php7-dev=7.4.21-r0 \
-        gcc=10.3.1_git20210424-r2 \ 
+        gcc=10.3.1_git20210424-r2 \
     \
     \
     && pecl install \
