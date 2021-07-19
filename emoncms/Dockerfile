@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.2.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:10.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -8,8 +8,9 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base
 RUN \
     apk add --no-cache \
-        nginx=1.18.0-r15 \
         mariadb-client=10.5.11-r0 \
+        mosquitto-dev=2.0.11-r0 \
+        nginx=1.20.1-r3 \
         php7-ctype=7.4.21-r0 \
         php7-curl=7.4.21-r0 \
         php7-fpm=7.4.21-r0 \
@@ -23,7 +24,14 @@ RUN \
         php7=7.4.21-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        git=2.30.2-r0 \
+        git=2.32.0-r0 \
+        php7-pear=7.4.21-r0 \
+        php7-dev=7.4.21-r0 \
+        gcc=10.3.1_git20210424-r2 \ 
+    \
+    \
+    && pecl install \
+        Mosquitto-beta \
     \
     && git clone --branch master \
         https://github.com/emoncms/emoncms.git /var/www/emoncms ; cd /var/www/emoncms ; git checkout 94a3f222cda2dcdf8a4b3ca6275108eca4549aec \
