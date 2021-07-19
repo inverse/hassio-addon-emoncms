@@ -44,3 +44,4 @@ jobs:
           --all \
           --target emoncms \
           --docker-hub inversechi
+          --version v1.1.1
