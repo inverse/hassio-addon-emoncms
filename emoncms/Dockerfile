@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.2.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:10.0.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -8,22 +8,22 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base
 RUN \
     apk add --no-cache \
-        nginx=1.18.0-r15 \
-        mariadb-client=10.5.10-r0 \
-        php7-ctype=7.4.19-r0 \
-        php7-curl=7.4.19-r0 \
-        php7-fpm=7.4.19-r0 \
-        php7-gettext=7.4.19-r0 \
-        php7-json=7.4.19-r0 \
-        php7-mbstring=7.4.19-r0 \
-        php7-mysqli=7.4.19-r0 \
-        php7-opcache=7.4.19-r00 \
-        php7-session=7.4.19-r0 \
-        php7-zip=7.4.19-r0 \
-        php7=7.4.19-r0 \
+        nginx=1.20.1-r3 \
+        mariadb-client=10.5.12-r0 \
+        php7-ctype=7.4.22-r0 \
+        php7-curl=7.4.22-r0 \
+        php7-fpm=7.4.22-r0 \
+        php7-gettext=7.4.22-r0 \
+        php7-json=7.4.22-r0 \
+        php7-mbstring=7.4.22-r0 \
+        php7-mysqli=7.4.22-r0 \
+        php7-opcache=7.4.22-r00 \
+        php7-session=7.4.22-r0 \
+        php7-zip=7.4.22-r0 \
+        php7=7.4.22-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        git=2.30.2-r0 \
+        git=2.32.0-r0 \
     \
     && git clone --branch master \
         https://github.com/emoncms/emoncms.git /var/www/emoncms ; cd /var/www/emoncms ; git checkout 94a3f222cda2dcdf8a4b3ca6275108eca4549aec \
