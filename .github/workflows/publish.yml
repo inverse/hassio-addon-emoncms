@@ -11,6 +11,10 @@ jobs:
     steps:
     - name: Checkout the repository
       uses: actions/checkout@v2
+    - name: Update emoncms/config.json
+      run: |
+        cat <<< $(jq '. += { "image": "inversechi/hassio-emoncms-{arch}"}' emoncms/config.json) > emoncms/config.json
+        cat <<< $(jq '.version = "${{ github.event.release.tag_name }}"' emoncms/config.json) > emoncms/config.json
     - name: Login to DockerHub
       uses: docker/login-action@v1
       with:

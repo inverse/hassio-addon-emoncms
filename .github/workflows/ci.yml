@@ -36,6 +36,10 @@ jobs:
     steps:
     - name: Checkout the repository
       uses: actions/checkout@v2
+    - name: Update emoncms/config.json (faking)
+      run: |
+        cat <<< $(jq '. += { "image": "inversechi/hassio-emoncms-{arch}"}' emoncms/config.json) > emoncms/config.json
+        cat <<< $(jq '.version = "v1.1.1"' emoncms/config.json) > emoncms/config.json
     - name: Test build
       uses: home-assistant/builder@master
       with:
