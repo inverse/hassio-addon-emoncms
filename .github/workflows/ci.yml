@@ -24,7 +24,7 @@ jobs:
     - name: Checkout the repository
       uses: actions/checkout@v2
     - name: 🚀 Run Home Assistant Add-on Lint
-      uses: frenck/action-addon-linter@v2.2
+      uses: frenck/action-addon-linter@v2.3
       with:
         path: "./emoncms"
   build:
