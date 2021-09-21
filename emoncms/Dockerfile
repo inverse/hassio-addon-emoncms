@@ -10,30 +10,30 @@ RUN \
     apk add --no-cache \
         nginx=1.20.1-r3 \
         mariadb-client=10.5.12-r0 \
-        php7-ctype=7.4.22-r0 \
-        php7-curl=7.4.22-r0 \
-        php7-fpm=7.4.22-r0 \
-        php7-gettext=7.4.22-r0 \
-        php7-json=7.4.22-r0 \
-        php7-mbstring=7.4.22-r0 \
-        php7-mysqli=7.4.22-r0 \
-        php7-opcache=7.4.22-r00 \
-        php7-session=7.4.22-r0 \
-        php7-zip=7.4.22-r0 \
-        php7=7.4.22-r0 \
+        php7-ctype=7.4.23-r0 \
+        php7-curl=7.4.23-r0 \
+        php7-fpm=7.4.23-r0 \
+        php7-gettext=7.4.23-r0 \
+        php7-json=7.4.23-r0 \
+        php7-mbstring=7.4.23-r0 \
+        php7-mysqli=7.4.23-r0 \
+        php7-opcache=7.4.23-r00 \
+        php7-session=7.4.23-r0 \
+        php7-zip=7.4.23-r0 \
+        php7=7.4.23-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
         git=2.32.0-r0 \
     \
-    && git clone --branch master \
-        https://github.com/emoncms/emoncms.git /var/www/emoncms ; cd /var/www/emoncms ; git checkout 94a3f222cda2dcdf8a4b3ca6275108eca4549aec \
-    && git clone --branch 2.0.10 --depth=1 \
+    && git clone --branch 10.8.1 --depth=1 \
+        https://github.com/emoncms/emoncms.git /var/www/emoncms ; cd /var/www/emoncms \
+    && git clone --branch 2.1.5 --depth=1 \
         https://github.com/emoncms/dashboard.git /var/www/emoncms/Modules/dashboard \
-    && git clone --branch 2.0.11 --depth=1 \
+    && git clone --branch 2.1.1 --depth=1 \
         https://github.com/emoncms/graph.git /var/www/emoncms/Modules/graph \
-    && git clone --branch 2.2.7 --depth=1 \
+    && git clone --branch 2.3.2 --depth=1 \
         https://github.com/emoncms/app.git /var/www/emoncms/Modules/app \
-    && git clone --branch 2.0.9 --depth=1 \
+    && git clone --branch 2.1.2 --depth=1 \
         https://github.com/emoncms/device.git /var/www/emoncms/Modules/device \
     \
     && apk del --no-cache --purge .build-dependencies \
