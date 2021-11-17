@@ -21,6 +21,7 @@ RUN \
         php7-session=7.4.25-r1 \
         php7-zip=7.4.25-r1 \
         php7=7.4.25-r1 \
+        redis=6.2.5-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
         git=2.32.0-r0 \
@@ -68,11 +69,11 @@ LABEL \
     org.opencontainers.image.title="Emoncms" \
     org.opencontainers.image.description="Emoncms is a powerful open-source web-app for processing, logging and visualising energy, temperature and other environmental data." \
     org.opencontainers.image.vendor="Home Assistant Community Add-ons" \
-    org.opencontainers.image.authors="Malachi Soord" \
+    org.opencontainers.image.authors="Malachi Soord & ArnyminerZ" \
     org.opencontainers.image.licenses="MIT" \
     org.opencontainers.image.url="https://addons.community" \
-    org.opencontainers.image.source="https://github.com/inverse/hassio-addon-emoncms" \
-    org.opencontainers.image.documentation="https://github.com/inverse/hassio-addon-emoncms/blob/master/README.md" \
+    org.opencontainers.image.source="https://github.com/ArnyminerZ/hassio-addon-emoncms" \
+    org.opencontainers.image.documentation="https://github.com/ArnyminerZ/hassio-addon-emoncms/blob/master/README.md" \
     org.opencontainers.image.created=${BUILD_DATE} \
     org.opencontainers.image.revision=${BUILD_REF} \
     org.opencontainers.image.version=${BUILD_VERSION}
