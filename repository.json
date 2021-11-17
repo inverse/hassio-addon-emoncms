@@ -1,6 +1,6 @@
 
 {
     "name": "AMZ Home Assistant Emoncms Repository",
-    "url": "https://github.com/inverse/hassio-addon-emoncms",
-    "maintainer": "Malachi Soord <me@malachisoord.com>"
+    "url": "https://github.com/ArnyminerZ/hassio-addon-emoncms",
+    "maintainer": "Malachi Soord <me@malachisoord.com> & ArnyminerZ"
 }
