@@ -1,6 +1,6 @@
 {
   "name": "AMZ Emoncms",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "slug": "emoncms",
   "description": "Emoncms is a powerful open-source web-app for processing, logging and visualising energy, temperature and other environmental data.",
   "url": "https://github.com/ArnyminerZ/hassio-addon-emoncms",
