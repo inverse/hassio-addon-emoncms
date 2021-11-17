@@ -21,6 +21,7 @@ RUN \
         php7-session=7.4.23-r0 \
         php7-zip=7.4.23-r0 \
         php7=7.4.23-r0 \
+        redis=6.2.5-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
         git=2.32.0-r0 \
