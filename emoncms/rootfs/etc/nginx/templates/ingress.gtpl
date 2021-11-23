@@ -1,0 +1,17 @@
+server {
+    listen 8099;
+    allow  172.30.32.2;
+    deny   all;
+
+    include /etc/nginx/includes/server_params.conf;
+    include /etc/nginx/includes/php.conf;
+
+    location ~ .php$ {
+        fastcgi_pass 127.0.0.1:9001;
+        fastcgi_read_timeout 900;
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+}

@@ -3,18 +3,20 @@
 # Home Assistant Community Add-on: Emoncms
 # Configures NGINX for use with Emoncms
 # ==============================================================================
-declare certfile
-declare keyfile
+if bashio::var.is_empty "$(bashio::addon.port 80)"; then
+    bashio::log.warning "No host port is configured, please ensure a port is"
+    bashio::log.warning "set for external access to function"
+fi
 
 bashio::config.require.ssl
+bashio::var.json \
+    certfile "$(bashio::config 'certfile')" \
+    keyfile "$(bashio::config 'keyfile')" \
+    ssl "^$(bashio::config 'ssl')" \
+    | tempio \
+        -template /etc/nginx/templates/direct.gtpl \
+        -out /etc/nginx/servers/direct.conf
 
-if bashio::config.true 'ssl'; then
-    rm /etc/nginx/nginx.conf
-    mv /etc/nginx/nginx-ssl.conf /etc/nginx/nginx.conf
-
-    certfile=$(bashio::config 'certfile')
-    keyfile=$(bashio::config 'keyfile')
-
-    sed -i "s#%%certfile%%#${certfile}#g" /etc/nginx/nginx.conf
-    sed -i "s#%%keyfile%%#${keyfile}#g" /etc/nginx/nginx.conf
-fi
+tempio \
+    -template /etc/nginx/templates/ingress.gtpl \
+    -out /etc/nginx/servers/ingress.conf
