@@ -4,7 +4,6 @@ server {
     deny   all;
 
     include /etc/nginx/includes/server_params.conf;
-    include /etc/nginx/includes/php.conf;
 
     location ~ .php$ {
         fastcgi_pass 127.0.0.1:9001;
