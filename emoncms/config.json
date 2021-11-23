@@ -4,14 +4,12 @@
   "slug": "emoncms",
   "description": "Emoncms is a powerful open-source web-app for processing, logging and visualising energy, temperature and other environmental data.",
   "url": "https://github.com/inverse/hassio-addon-emoncms",
-  "webui": "[PROTO:ssl]://[HOST]:[PORT:80]",
   "startup": "system",
   "init": false,
   "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
   "services": ["mysql:want"],
   "map": ["ssl"],
   "ingress": true,
-  "ingress_port": 8099,
   "panel_icon": "mdi:chart-bar",
   "ports": {
     "80/tcp": 9541
