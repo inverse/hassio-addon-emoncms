@@ -8,19 +8,19 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base
 RUN \
     apk add --no-cache \
-        nginx=1.20.1-r3 \
-        mariadb-client=10.5.12-r0 \
-        php7-ctype=7.4.23-r0 \
-        php7-curl=7.4.23-r0 \
-        php7-fpm=7.4.23-r0 \
-        php7-gettext=7.4.23-r0 \
-        php7-json=7.4.23-r0 \
-        php7-mbstring=7.4.23-r0 \
-        php7-mysqli=7.4.23-r0 \
-        php7-opcache=7.4.23-r00 \
-        php7-session=7.4.23-r0 \
-        php7-zip=7.4.23-r0 \
-        php7=7.4.23-r0 \
+        nginx=1.20.2-r0 \
+        mariadb-client=10.5.13-r0 \
+        php7-ctype=7.4.26-r0 \
+        php7-curl=7.4.26-r0 \
+        php7-fpm=7.4.26-r0 \
+        php7-gettext=7.4.26-r0 \
+        php7-json=7.4.26-r0 \
+        php7-mbstring=7.4.26-r0 \
+        php7-mysqli=7.4.26-r0 \
+        php7-opcache=7.4.26-r00 \
+        php7-session=7.4.26-r0 \
+        php7-zip=7.4.26-r0 \
+        php7=7.4.26-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
         git=2.32.0-r0 \
