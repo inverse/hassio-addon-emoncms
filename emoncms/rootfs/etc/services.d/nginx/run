@@ -6,4 +6,4 @@
 # Wait for PHP-FPM to become available
 bashio::net.wait_for 9001
 bashio::log.info "Starting NGinx server..."
-exec nginx -g "daemon off;"
+exec nginx
