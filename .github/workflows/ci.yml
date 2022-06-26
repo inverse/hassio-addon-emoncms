@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout the repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: Install pre-commit
       run: pip install pre-commit
     - name: Lint
@@ -22,9 +22,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout the repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: 🚀 Run Home Assistant Add-on Lint
-      uses: frenck/action-addon-linter@v2.2
+      uses: frenck/action-addon-linter@v2.9
       with:
         path: "./emoncms"
   build:
@@ -35,11 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout the repository
-      uses: actions/checkout@v2
-    - name: Update emoncms/config.json (faking)
-      run: |
-        cat <<< $(jq '. += { "image": "inversechi/hassio-emoncms-{arch}"}' emoncms/config.json) > emoncms/config.json
-        cat <<< $(jq '.version = "v1.1.1"' emoncms/config.json) > emoncms/config.json
+      uses: actions/checkout@v3
     - name: Test build
       uses: home-assistant/builder@master
       with:
