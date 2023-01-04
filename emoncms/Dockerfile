@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:11.1.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:13.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -8,32 +8,31 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base
 RUN \
     apk add --no-cache \
-        nginx=1.20.2-r0 \
-        mariadb-client=10.6.4-r2 \
-        php7-ctype=7.4.28-r0 \
-        php7-curl=7.4.28-r0 \
-        php7-fpm=7.4.28-r0 \
-        php7-gettext=7.4.28-r0 \
-        php7-json=7.4.28-r0 \
-        php7-mbstring=7.4.28-r0 \
-        php7-mysqli=7.4.28-r0 \
-        php7-opcache=7.4.28-r00 \
-        php7-session=7.4.28-r0 \
-        php7-zip=7.4.28-r0 \
-        php7=7.4.28-r0 \
+        nginx=1.22.1-r0 \
+        mariadb-client=10.6.11-r0 \
+        php81-ctype=8.1.13-r0 \
+        php81-curl=8.1.13-r0 \
+        php81-fpm=8.1.13-r0 \
+        php81-gettext=8.1.13-r0 \
+        php81-mbstring=8.1.13-r0 \
+        php81-mysqli=8.1.13-r0 \
+        php81-opcache=8.1.13-r0 \
+        php81-session=8.1.13-r0 \
+        php81-zip=8.1.13-r0 \
+        php81=8.1.13-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        git=2.34.1-r0 \
+        git=2.38.2-r0 \
     \
-    && git clone --branch 10.8.5 --depth=1 \
+    && git clone --branch 11.2.3 --depth=1 \
         https://github.com/emoncms/emoncms.git /var/www/emoncms ; cd /var/www/emoncms \
-    && git clone --branch 2.1.5 --depth=1 \
+    && git clone --branch 2.3.3 --depth=1 \
         https://github.com/emoncms/dashboard.git /var/www/emoncms/Modules/dashboard \
-    && git clone --branch 2.1.1 --depth=1 \
+    && git clone --branch 2.2.3 --depth=1 \
         https://github.com/emoncms/graph.git /var/www/emoncms/Modules/graph \
-    && git clone --branch 2.3.2 --depth=1 \
+    && git clone --branch 2.6.7 --depth=1 \
         https://github.com/emoncms/app.git /var/www/emoncms/Modules/app \
-    && git clone --branch 2.1.2 --depth=1 \
+    && git clone --branch 2.2.0 --depth=1 \
         https://github.com/emoncms/device.git /var/www/emoncms/Modules/device \
     \
     && apk del --no-cache --purge .build-dependencies \
