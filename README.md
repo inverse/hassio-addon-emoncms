@@ -1,5 +1,9 @@
 # Home Assistant Add-on: Emoncms
 
+## Note
+
+This addon is very much unmaintained, thankfully there is a more maintained addmon provided by [Open Building Management](https://github.com/Open-Building-Management/emoncms).
+
 ## About
 
 [Emoncms][emoncms] is a powerful open-source web-app for processing, logging and visualising energy, temperature and other environmental data.
